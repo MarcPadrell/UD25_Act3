@@ -10,7 +10,7 @@ CREATE TABLE `almacenes` (
 );
 
 CREATE TABLE cajas (
-  num_referencia char(5) PRIMARY KEY,
+  num_referencia varchar(5) PRIMARY KEY,
   contenido varchar(100),
   valor int,
   cod_almacen int,

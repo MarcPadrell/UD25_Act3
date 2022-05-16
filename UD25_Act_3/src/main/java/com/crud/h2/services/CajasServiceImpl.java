@@ -41,7 +41,7 @@ public class CajasServiceImpl implements ICajasService{
 	@Override
 	public void eliminarCajas(String num_ref) {
 		// TODO Auto-generated method stub
-		iCajasDAO.findById(num_ref);
+		iCajasDAO.deleteById(num_ref);
 	}
 
 }

@@ -34,11 +34,11 @@ public class CajasController {
 	}
 
 	@GetMapping("/cajas/{num_referencia}")
-	public Cajas cajasXID(@PathVariable(name = "num_referencia") String dni) {
+	public Cajas cajasXID(@PathVariable(name = "num_referencia") String num_ref) {
 
 		Cajas caja_xid = new Cajas();
 
-		caja_xid = cajasServiceImpl.cajasXID(dni);
+		caja_xid = cajasServiceImpl.cajasXID(num_ref);
 
 		System.out.println("Caja XID: " + caja_xid);
 
@@ -46,12 +46,12 @@ public class CajasController {
 	}
 
 	@PutMapping("/cajas/{num_referencia}")
-	public Cajas actualizarCajas(@PathVariable(name = "num_referencia") String dni, @RequestBody Cajas cajas) {
+	public Cajas actualizarCajas(@PathVariable(name = "num_referencia") String num_ref, @RequestBody Cajas cajas) {
 
 		Cajas caja_seleccionado = new Cajas();
 		Cajas caja_actualizado = new Cajas();
 
-		caja_seleccionado = cajasServiceImpl.cajasXID(dni);
+		caja_seleccionado = cajasServiceImpl.cajasXID(num_ref);
 
 		caja_seleccionado.setContenido(cajas.getContenido());
 		caja_seleccionado.setValor(cajas.getValor());
@@ -64,8 +64,8 @@ public class CajasController {
 	}
 
 	@DeleteMapping("/cajas/{num_referencia}")
-	public void eliminarCaja(@PathVariable(name = "num_referencia") String dni) {
-		cajasServiceImpl.eliminarCajas(dni);
+	public void eliminarCaja(@PathVariable(name = "num_referencia") String num_ref) {
+		cajasServiceImpl.eliminarCajas(num_ref);
 	}
 
 }

@@ -14,7 +14,7 @@ public class Cajas {
 	// Atributos de entidad cliente
 	@Id
 	@Column(name = "num_referencia") // no hace falta si se llama igual
-	private char num_referencia;
+	private String num_referencia;
 	
 	@Column(name = "contenido") // no hace falta si se llama igual
 	private String contenido;
@@ -30,18 +30,17 @@ public class Cajas {
 
 	}
 
-	public Cajas(char num_referencia, String contenido, int valor) {
+	public Cajas(String num_referencia, String contenido, int valor) {
 		this.num_referencia = num_referencia;
 		this.contenido = contenido;
 		this.valor = valor;
-		//this.almacenes = almacenes;
 	}
 
-	public char getNum_referencia() {
+	public String getNum_referencia() {
 		return num_referencia;
 	}
 
-	public void setNum_referencia(char num_referencia) {
+	public void setNum_referencia(String num_referencia) {
 		this.num_referencia = num_referencia;
 	}
 
